@@ -87,3 +87,16 @@ const chart = new ApexCharts(document.querySelector("#charts"), options);
 
 // Render charts
 chart.render();
+
+document.querySelector("button").addEventListener("click", () =>
+  chart.updateOptions({
+    plotOptions: {
+      bar: {
+        horizontal: true
+      }
+    },
+    fill: {
+      colors: ["#b2d7e9"]
+    }
+  })
+);
