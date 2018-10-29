@@ -65,7 +65,7 @@ const options = {
     }
   },
   fill: {
-    colors: ["#ff0066"]
+    colors: ["#FFE063"]
   },
   // grid: {
   // row: {
@@ -88,15 +88,59 @@ const chart = new ApexCharts(document.querySelector("#charts"), options);
 // Render charts
 chart.render();
 
-document.querySelector("button").addEventListener("click", () =>
+document.getElementById("blue").addEventListener("click", () =>
   chart.updateOptions({
     plotOptions: {
-      bar: {
-        horizontal: true
-      }
+      // bar: {
+      //   horizontal: true
+      // }
     },
     fill: {
       colors: ["#b2d7e9"]
     }
   })
+);
+document.getElementById("green").addEventListener("click", () =>
+  chart.updateOptions({
+    plotOptions: {
+      // bar: {
+      //   horizontal: true
+      // }
+    },
+    fill: {
+      colors: ["#00FA9A"]
+    }
+  })
+);
+document.getElementById("pink").addEventListener("click", () =>
+  chart.updateOptions({
+    plotOptions: {
+      // bar: {
+      //   horizontal: true
+      // }
+    },
+    fill: {
+      colors: ["#ff0066"]
+    }
+  })
+);
+document.getElementById("rotate").addEventListener(
+  "click",
+  () =>
+    chart.updateOptions({
+      plotOptions: {
+        bar: {
+          horizontal: true
+        }
+      }
+    }),
+  setInterval(() => {
+    chart.updateOptions({
+      plotOptions: {
+        bar: {
+          horizontal: false
+        }
+      }
+    });
+  }, 4000)
 );
